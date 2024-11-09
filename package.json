@@ -1,0 +1,11 @@
+{
+  "name": "mercadodesignpatterns",
+  "version": "1.0.0",
+  "description": "Trabalho final",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx ts-node index.ts"
+  },
+  "author": "",
+  "license": "ISC"
+}
