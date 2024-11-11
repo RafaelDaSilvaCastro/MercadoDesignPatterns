@@ -12,9 +12,10 @@ cat1.add(sabonete)
 cat1.add(shampoo)
 
 shampoo.mudarNome('Shampoo + Comdicionador')
-cat1.remove(sabonete)
-
 cat1.add(cat2)
 cat1.add(cat3)
 cat2.add(toalha)
+cat1.remove(sabonete)
+
+
 console.log(cat1.exibir())

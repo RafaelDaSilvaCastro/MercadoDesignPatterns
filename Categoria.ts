@@ -18,10 +18,11 @@ export default class Categoria extends Component{
     if (i >= 0) {
       this.componentes.splice(i, 1);
     }
-    this.preco = 0;
+    let total = 0
     for(x of this.componentes){
-      this.preco += x.getPreco()
+      total += x.getPreco() 
     }
+    this.preco = total;
   }
 
   exibir(): void {
