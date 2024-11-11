@@ -20,8 +20,4 @@ export default class Component{
     this.nome = novoNome;
     return `${nomeAntigo} alterado para: ${novoNome}`
   }
-
-  exibir() : void{
-    throw new Error('Função não implementada!')
-  }
 }

@@ -2,8 +2,6 @@ import Component from "./Component";
 
 export default class Produto extends Component{
 
-  private itens : Component[];
-
   exibir(): void {
       console.log(this)
   }
