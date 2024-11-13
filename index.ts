@@ -1,10 +1,11 @@
 import Produto from './Produto'
 import Categoria from './Categoria'
+import { Disponivel, AguardandoReposicao } from "./Estados"
 
 const cat1 = new Categoria('Higiene', 0)
 const cat2 = new Categoria('Banho', 0)
 const cat3 = new Categoria('Perfumaria', 0)
-const sabonete = new Produto('Sabonete', 7 , 100)
+const sabonete = new Produto('Sabonete', 7 , 10)
 const shampoo = new Produto('shampoo', 40, 0)
 const toalha = new Produto('Toalha', 75, 40)
 
@@ -18,4 +19,5 @@ cat2.add(toalha)
 cat1.remove(sabonete)
 
 
-console.log(cat1.exibir())
+sabonete.vender(21)
+sabonete.vender(3)
