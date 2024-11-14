@@ -21,16 +21,19 @@ cat1.remove(sabonete)
 
 //cat1.exibir()
 
-// sabonete.reabastecer(3)
+//  sabonete.reabastecer(3)
 
-// sabonete.vender(10)
+//  sabonete.vender(10)
 
-// sabonete.reabastecer(3)
-// sabonete.vender(1)
+//  sabonete.reabastecer(3)
+//  sabonete.vender(10)
+//  sabonete.vender(10)
+//  sabonete.reabastecer(3)
+//  sabonete.vender(1)
 //Observer
 
 
-// const observador = new VerificarPromocaoObserver(sabonete, sabonete.getPreco())
+const observador = new VerificarPromocaoObserver(sabonete, sabonete.getPreco())
 
-// sabonete.adicionarObservador(observador);
-// sabonete.inserirPromocao(60);
+sabonete.adicionarObservador(observador);
+sabonete.inserirPromocao(3);
