@@ -1,15 +1,20 @@
 import Component from "./Component";
 import { Disponivel, AguardandoReposicao } from "./Estados"
 import ProdutoEstado from "./ProdutoEstado";
+import Observer from "./Observer"
 
 export default class Produto extends Component{
   private estoque : number;
   private estado : ProdutoEstado;
+  private valorPromocao : number;
+  private observador : Observer[];
 
-  constructor(xnome : string, xpreco : number, xestoque : number){
+  constructor(xnome : string, xpreco : number, xestoque : number, valorPromocao : number){
     super(xnome, xpreco);
     this.estoque = xestoque;
     this.estado = new Disponivel(this);
+    this.valorPromocao = valorPromocao;
+    this.observador = [];
   }
 
   getEstoque():number{
@@ -46,4 +51,23 @@ export default class Produto extends Component{
     console.log(`Novo saldo do item: ${this.getEstoque()}`)
     console.log('___________________________')
   }
+
+  inserirPromocao(novaPromocao : number){
+    this.valorPromocao = novaPromocao;
+    this.notificarObservador();
+  }
+
+  adicionarObservador(observador : Observer): void{
+    this.observador.push(observador)
+  }
+
+  notificarObservador(): void {
+    this.observador.forEach((observador) => observador.atualizar());
+  }
+
+  getValorPromocao():number{
+    return this.valorPromocao
+  }
+
+
 }

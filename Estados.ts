@@ -20,6 +20,8 @@ export class Disponivel extends ProdutoEstado{
 
   reabastecer(x : number): void {
     console.log(`Reabastecido ${x} quantidade(s)`)
+    const calcEstoque = (this.produto ? this.produto.getEstoque() : 0) + x;
+    this.produto?.setEstoque(calcEstoque)
   }
   
 }
@@ -36,6 +38,8 @@ export class AguardandoReposicao extends ProdutoEstado{
   reabastecer(x: number): void {
     console.log(`Reabastecido ${x} quantidade(s)`)
     console.log(`Liberado para venda!`) 
+    const calcEstoque = (this.produto ? this.produto.getEstoque() : 0) + x;
+    this.produto?.setEstoque(calcEstoque)    
     this.produto?.setEstado(new Disponivel(this.produto))
   }
 
